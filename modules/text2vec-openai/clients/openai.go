@@ -156,6 +156,7 @@ func (v *vectorizer) vectorize(ctx context.Context, input []string, model string
 		req.Header.Add("OpenAI-Organization", openAIOrganization)
 	}
 	req.Header.Add("Content-Type", "application/json")
+	req.Header.Add("User-Agent", "weaviate")
 
 	res, err := v.httpClient.Do(req)
 	if err != nil {
